@@ -1,46 +1,42 @@
 <!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Effect with Animated Image</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+    <div class="container">
+        <div class="typing-container1" id="typing-text"></div>
+        <img src="your-image.jpg" alt="Your Image" id="animated-image" class="hidden">
+    </div>
 
-<div class="w3-container">
-  <h2>Tabs</h2>
-  <p>Tabs are perfect for single page web applications, or for web pages capable of displaying different subjects. Click on the links below.</p>
-</div>
+    <audio id="typingSound" src="typing1.mp3" preload="auto"></audio>
+    
+    <script>
+        const typingText = 'Hello there, Welcome to my \n Portfolio'  + '\n' +  'hi';  
 
-<div class="w3-bar w3-black">
-  <button class="w3-bar-item w3-button" onclick="openCity('London')">London</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Paris</button>
-  <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Tokyo</button>
-</div>
+        const typingContainer = document.getElementById('typing-text');
+        const typingSound = document.getElementById('typingSound');
+        const animatedImage = document.getElementById('animated-image');
+        let index = 0;
 
-<div id="London" class="w3-container city">
-  <h2>London</h2>
-  <p>London is the capital city of England.</p>
-</div>
-
-<div id="Paris" class="w3-container city" style="display:none">
-  <h2>Paris</h2>
-  <p>Paris is the capital of France.</p> 
-</div>
-
-<div id="Tokyo" class="w3-container city" style="display:none">
-  <h2>Tokyo</h2>
-  <p>Tokyo is the capital of Japan.</p>
-</div>
-
-<script>
-function openCity(cityName) {
-  var i;
-  var x = document.getElementsByClassName("city");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  document.getElementById(cityName).style.display = "block";  
-}
-</script>
-
+        function typeEffect() {
+            if (index < typingText.length) {
+                typingContainer.textContent += typingText.charAt(index);
+                typingSound.play();
+                index++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            } else {
+                typingSound.pause();
+                typingSound.currentTime = 0; // Reset sound position
+                animatedImage.classList.remove('hidden'); // Show the image
+                animatedImage.classList.add('fade-in'); // Trigger the animation
+            }
+        }
+        typingSound.loop = true;
+        typeEffect();
+    </script>
 </body>
 </html>

@@ -1,53 +1,40 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    background-color: #b3b3ff;
+    color: #3366ff;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
+.heading {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 40px;
     text-decoration: none;
+    transition: all 0.6s ease;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.hero-section {
-    background: #f4f4f4;
-    padding: 100px 20px;
+.heading:hover {
+    color: pink;
+    transform: scale(1.2);
+    transform-origin: center;
+    overflow: hidden;
+}
+
+.spacing {
+    margin-left: 700px;
+}
+
+.subheading p {
+    margin-top: 60px;
+    font-size: 30px;
     text-align: center;
+    margin-right: 100px;
+    transition: all 0.6s ease;
+    position: relative;
+    display: inline-block;
 }
 
-.about-section, .projects-section, .contact-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.project-cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
+.subheading p:hover {
+    color: pink;
+    transform: scale(1.2);
 }

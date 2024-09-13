@@ -1,0 +1,16 @@
+.hidden {
+    display: none;
+}
+
+img {
+    width: 100%; /* Adjust as needed */
+    max-width: 600px; /* Adjust as needed */
+    margin-top: 20px; /* Space between the text and the image */
+    display: block;
+    opacity: 0; /* Start with the image invisible */
+    transition: opacity 1s ease-in-out; /* Smooth fade-in transition */
+}
+
+.fade-in {
+    opacity: 1; /* Make the image fully visible */
+}

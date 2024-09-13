@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Koshi's Protfolio </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMt23cez/3paNdF+ZlFEURp2fFr60H4FZ28LKPL" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1>Koshi's Protfolio</h1>
+    </div>
+    <div class="spacing">
+        <div class="subheading">
+        <p onclick="window.location.href='about.html'">Home</p>
+        <p onclick="window.location.href='projects.html'">Projects</p>
+        <p onclick="window.location.href='Passion.html'">Passion</p>
+        </div>
+    </div>
+        <div class="divider1">
+        <div class="spacing2">
+        <div class="typing-container1" id="typing-text"></div>
+        <audio id="typingSound" src="typing1.mp3" preload="auto"></audio>
+        <img src ="Screenshot (38).png" alt="your-image" id="animated-image" class="hidden"></div></div>
+    
+        <script>
+            const typingText = 'Hello there, Welcome to my Portfolio.\nMy Name is Piyush Yadav.\nI Love to draw and Create things. Hehe ';  
+
+            const typingContainer = document.getElementById('typing-text');
+            const typingSound = document.getElementById('typingSound')
+            const animatedImage = document.getElementById('animated-image');
+            let index = 0;
+
+            function typeEffect() {
+                if (index < typingText.length) {
+                    typingContainer.textContent += typingText.charAt(index);
+                    typingSound.ariaCurrent = 0;
+                    typingSound.play();
+                    index++;
+                    setTimeout(typeEffect, 100); // Adjust typing speed here
+                }
+                else {
+                    typingSound.pause();
+                    typingSound.ariaCurrent = 0;
+                    animatedImage.classList.remove('hidden'); 
+                    animatedImage.classList.add('fade-in'); 
+                }
+            }
+            typingSound.loop = true;
+            typeEffect();
+        </script>
+</body>
+
+</html>
